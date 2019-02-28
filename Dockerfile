@@ -10,7 +10,8 @@ ENV WEB3_VERSION=0.20.7
 ENV MOCHA_VERSION=5.2.0
 ENV MOCHA_JUNIT_VERSION=1.17.0
 ENV MOCHA_MULTI_VERSION=1.1.7
-ENV DAPP_UTILS_VERSION=1.0.1
+ENV DAPP_UTILS_VERSION=1.2.0
+ENV FAKER_VERSION=git+https://git@github.com/Marak/faker.js.git#d3ce6f1
 
 RUN npm install -g \
   truffle@${TRUFFLE_VERSION} \
@@ -18,6 +19,7 @@ RUN npm install -g \
   mocha@${MOCHA_VERSION} \
   mocha-junit-reporter@${MOCHA_JUNIT_VERSION} \
   mocha-multi-reporters@${MOCHA_MULTI_VERSION} \
-  dapp-utils@${DAPP_UTILS_VERSION}
+  dapp-utils@${DAPP_UTILS_VERSION} \
+  faker@${FAKER_VERSION}
 
 ENTRYPOINT ["truffle"]
