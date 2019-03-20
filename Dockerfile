@@ -12,6 +12,7 @@ ENV MOCHA_JUNIT_VERSION=1.17.0
 ENV MOCHA_MULTI_VERSION=1.1.7
 ENV DAPP_UTILS_VERSION=1.2.0
 ENV FAKER_VERSION=git+https://git@github.com/Marak/faker.js.git#d3ce6f1
+ENV OPENZEPPELIN_VERSION=2.2.0
 
 RUN npm install -g \
   truffle@${TRUFFLE_VERSION} \
@@ -21,5 +22,8 @@ RUN npm install -g \
   mocha-multi-reporters@${MOCHA_MULTI_VERSION} \
   dapp-utils@${DAPP_UTILS_VERSION} \
   faker@${FAKER_VERSION}
+
+RUN npm install \
+  openzeppelin-solidity@${OPENZEPPELIN_VERSION}
 
 ENTRYPOINT ["truffle"]
