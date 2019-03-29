@@ -9,6 +9,6 @@ RUN npm install -g \
   truffle@${TRUFFLE_VERSION}
 
 COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-copy ./truffle.js ./truffle.js
+COPY ./truffle.js ./truffle.js
 
 ENTRYPOINT ["docker-entrypoint.sh"]
