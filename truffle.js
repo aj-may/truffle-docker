@@ -19,6 +19,9 @@ if (process.env.ETH_PORT)
 if (process.env.ETH_NETWORK_ID)
   config.networks.default.network_id = process.env.ETH_NETWORK_ID;
 
+if (process.env.ETH_GAS)
+  config.networks.default.gas = process.env.ETH_GAS;
+
 if (process.env.ETH_GAS_PRICE)
   config.networks.default.gasPrice = process.env.ETH_GAS_PRICE;
 
