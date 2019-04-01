@@ -20,7 +20,7 @@ if (process.env.SOLC_VERSION)
   config.compilers.solc.version = process.env.SOLC_VERSION;
 
 if (process.env.SOLC_OPTIMIZER_ENABLED)
-  config.solc.optimizer.enabled = process.env.SOLC_OPTIMIZER_ENABLED;
+  config.solc.optimizer.enabled = process.env.SOLC_OPTIMIZER_ENABLED === 'true';
 
 if (process.env.SOLC_OPTIMIZER_RUNS)
   config.solc.optimizer.runs = process.env.SOLC_OPTIMIZER_RUNS;
