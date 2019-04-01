@@ -2,13 +2,28 @@ let config = {
   compilers: {
     solc: {},
   },
+  solc: {
+    optimizer: {
+      enabled: true,
+      runs: 200,
+    },
+  },
   networks: {
-    default: {},
+    default: {
+      port: 8545,
+      network_id: '*',
+    },
   },
 };
 
 if (process.env.SOLC_VERSION)
   config.compilers.solc.version = process.env.SOLC_VERSION;
+
+if (process.env.SOLC_OPTIMIZER_ENABLED)
+  config.solc.optimizer.enabled = process.env.SOLC_OPTIMIZER_ENABLED;
+
+if (process.env.SOLC_OPTIMIZER_RUNS)
+  config.solc.optimizer.runs = process.env.SOLC_OPTIMIZER_RUNS;
 
 if (process.env.ETH_HOST)
   config.networks.default.host = process.env.ETH_HOST;
