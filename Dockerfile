@@ -3,7 +3,7 @@ FROM node:11.12.0
 RUN mkdir /truffle
 WORKDIR /truffle
 
-ENV TRUFFLE_VERSION=5.1.16
+ENV TRUFFLE_VERSION=5.2.4
 
 RUN npm install -g truffle@${TRUFFLE_VERSION}
 
