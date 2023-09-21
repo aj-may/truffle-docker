@@ -1,9 +1,14 @@
-FROM node:11.12.0
+# set build-time variables with default values
+ARG NODE_VERSION=18.18.0
+ARG TRUFFLE_VERSION=5.11.5
+
+FROM node:${NODE_VERSION}
 
 RUN mkdir /truffle
 WORKDIR /truffle
 
-ENV TRUFFLE_VERSION=5.2.4
+# Set TRUFFLE_VERSION with the value from the build-time variable
+ENV TRUFFLE_VERSION=${TRUFFLE_VERSION}
 
 RUN npm install -g truffle@${TRUFFLE_VERSION}
 
